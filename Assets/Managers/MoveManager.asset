@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e790ec5eece8b8142a195d2300a5e689, type: 3}
+  m_Name: MoveManager
+  m_EditorClassIdentifier: 
+  MovesPerTurn: 3
+  updateMoveCounterEvent: {fileID: 11400000, guid: f5a28ae77549091408d85deae36eb39f, type: 2}
+  endTurn: {fileID: 11400000, guid: 087e6610163b8ae4e8e59a5bff6b16ea, type: 2}
+  enemyTurnText: death approaches
+  playerTurnText: ' move(s) left'
