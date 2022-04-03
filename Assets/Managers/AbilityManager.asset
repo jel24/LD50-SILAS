@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b1bc3f6034c04469ed6fe2806ffbb7, type: 3}
+  m_Name: AbilityManager
+  m_EditorClassIdentifier: 
+  moveManager: {fileID: 11400000, guid: 5d3a4a6f099b3af478c3d929f56150cf, type: 2}
+  useSprint: {fileID: 11400000, guid: 80883461e31b7134cba8768681965e10, type: 2}
+  useDecoy: {fileID: 11400000, guid: 4648f6c4b68a60241b13282bb9ec4784, type: 2}

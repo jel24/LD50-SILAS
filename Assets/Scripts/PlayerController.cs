@@ -9,10 +9,13 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Attributes")]
     public float moveDistance;
     public float moveTime;
-    public LayerMask moveCheckLayerMask;
+    public LayerMask moveCheckLayerMask, teleportCheckLayerMask;
     public MoveManager moveManager;
+    public AbilityManager abilityManager;
+    public Animator anim;
 
     bool inputAllowed = true;
+
 
     private void Awake()
     {
@@ -60,6 +63,14 @@ public class PlayerController : MonoBehaviour
             }
     }
 
+    public void Sprint(InputAction.CallbackContext context)
+    {
+        if (inputAllowed && context.performed && moveManager.CanMove() && abilityManager.CanUseSprint())
+        {
+            abilityManager.Sprint();
+        }
+    }
+
     bool CheckIfValidMove(Vector2 direction)
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, moveDistance, moveCheckLayerMask);
@@ -68,6 +79,7 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator MoveToSpot(Vector2 translation)
     {
+        anim.speed = 1f;
         float time = 0f;
         while (time < moveTime)
         {
@@ -77,6 +89,7 @@ public class PlayerController : MonoBehaviour
         }
         inputAllowed = true;
         moveManager.UseMove();
+        anim.speed = 0f;
 
     }
 
@@ -85,11 +98,5 @@ public class PlayerController : MonoBehaviour
         moveManager.NewTurn();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Death")
-        {
-            SceneManager.LoadScene("GameOver");
-        }
-    }
+
 }

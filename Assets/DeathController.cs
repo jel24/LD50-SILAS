@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-
+using UnityEngine.SceneManagement;
 public class DeathController : MonoBehaviour
 {
     public Seeker seeker;
@@ -57,5 +57,19 @@ public class DeathController : MonoBehaviour
         yield return new WaitForSeconds(moveDelay);
         movesLeft--;
         seeker.StartPath(transform.position, target.position, OnPathComplete);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            Invoke("GameOver", .5f);
+        }
+    }
+
+    void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+
     }
 }

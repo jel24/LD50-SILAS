@@ -38,6 +38,12 @@ public class MoveManager : ScriptableObject
         updateMoveCounterEvent.Trigger();
     }
 
+    public void AddMoves(int howMany)
+    {
+        movesLeft += howMany;
+        updateMoveCounterEvent.Trigger();
+    }
+
     public string MoveStatus()
     {
         return isPlayersTurn ? (movesLeft + playerTurnText) : enemyTurnText;
