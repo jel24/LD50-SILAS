@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public MoveManager moveManager;
     public AbilityManager abilityManager;
     public Animator anim;
+    public AudioSource audioSource;
+
+    public int sprints, decoys;
 
     bool inputAllowed = true;
 
@@ -20,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         moveManager.NewTurn();
+        abilityManager.SetAbilityCharges(sprints, decoys);
     }
 
 
@@ -68,6 +72,15 @@ public class PlayerController : MonoBehaviour
         if (inputAllowed && context.performed && moveManager.CanMove() && abilityManager.CanUseSprint())
         {
             abilityManager.Sprint();
+            audioSource.Play();
+        }
+    }
+
+    public void Decoy(InputAction.CallbackContext context)
+    {
+        if (inputAllowed && context.performed && moveManager.CanMove() && abilityManager.CanUseDecoy())
+        {
+            abilityManager.Decoy();
         }
     }
 

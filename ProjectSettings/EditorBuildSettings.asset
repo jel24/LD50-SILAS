@@ -9,9 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 365ada4403fa83f49a609548a43307e4
   - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
     path: Assets/Scenes/Labyrinth-1.unity
     guid: f7303b0d3781a0d41805b8f3e241ccea
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Labyrinth-2.unity
+    guid: b3df98c3235663647a05ad82ed02ed3f
+  - enabled: 1
+    path: Assets/Scenes/Labyrinth-3.unity
+    guid: e68e14bd91f059d46b78781d19be00c2
+  - enabled: 1
+    path: Assets/Scenes/Transition-1.unity
+    guid: 1fcf5ac77de610c4187972b9218c0677
+  - enabled: 1
+    path: Assets/Scenes/Transition-2.unity
+    guid: 5c674645e3634aa4cb5de617f80522dd
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: 9a4a427ac1e9b754d8a8ac8eb15becdc
   m_configObjects: {}

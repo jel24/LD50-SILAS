@@ -8,9 +8,9 @@ public class AbilityManager : ScriptableObject
     public MoveManager moveManager;
     public TriggeredEvent useSprint;
     public TriggeredEvent useDecoy;
-
-    public int sprintsLeft = 2;
-    public int decoysLeft = 1;
+    int sprintsLeft;
+    int decoysLeft;
+    bool canDecoyHere = true;
 
     public bool CanUseSprint()
     {
@@ -27,14 +27,13 @@ public class AbilityManager : ScriptableObject
 
     public bool CanUseDecoy()
     {
-        return decoysLeft > 0;
+        return decoysLeft > 0 && canDecoyHere;
     }
 
     public void Decoy()
     {
         decoysLeft--;
         useDecoy.Trigger();
-
     }
 
     public int GetDecoysLeft()
@@ -45,5 +44,17 @@ public class AbilityManager : ScriptableObject
     public int GetSprintsLeft()
     {
         return sprintsLeft;
+    }
+
+    public void SetAbilityCharges(int sprints, int decoys)
+    {
+        decoysLeft = decoys;
+        sprintsLeft = sprints;
+        canDecoyHere = true;
+    }
+
+    public void ToggleDecoy(bool onOff)
+    {
+        canDecoyHere = onOff;
     }
 }
